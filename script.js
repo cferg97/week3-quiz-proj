@@ -10,20 +10,18 @@ const scores = document.getElementById("scores")
 const scoreUpElement = document.getElementById("score-up")
 const scoreUp = parseInt(scoreUpElement.textContent, 0) //retrieves value of score counter/sets as 0
 const div = document.getElementById("pic")
-let shuffledQuestions, currentQuestionIndex
+let shuffledQuestions, currentQuestionIndex //declare variables whose values can be changed by functions
 
 
 
 // const progressBarFull = document.querySelector("progressBarFull")
 // declaring global variables
 
-startButton.addEventListener("click", startQuiz)
+startButton.addEventListener("click", startQuiz) //on click, start quiz
 nextButton.addEventListener("click", () => {
-    currentQuestionIndex++
-    setNextQ()
+    currentQuestionIndex++ //increment index on click
+    setNextQ() //set next question
 })
-// adding event listener to buttons
-
 
 
 function startQuiz(){
@@ -40,33 +38,30 @@ function startQuiz(){
     setNextQ() //next question function
 }
 
-function setNextQ(){
+function setNextQ(){ //next question function
     resetState() //goes to reset state function
-    showQuestion(shuffledQuestions[currentQuestionIndex])
+    showQuestion(shuffledQuestions[currentQuestionIndex]) //runs next question based on shuffled index
 }
 
 function resetState(){
-    nextButton.classList.add("hide")
+    nextButton.classList.add("hide") //hides the next button
     while(answerButtonsElement.firstChild){
-        answerButtonsElement.removeChild(answerButtonsElement.firstChild)
+        answerButtonsElement.removeChild(answerButtonsElement.firstChild) //removes answer buttons when quiz not started
     }
 }
 
-function removePic(){
-    div.removeChild(img)
-}
 
-function showQuestion(question){
-    questionElement.innerText = question.question
-    question.answers.forEach(answer => {
-        const button = document.createElement("button")
-        button.innerText = answer.text
-        button.classList.add("btn")
-        if (answer.correct) {
-            button.dataset.correct = answer.correct
+function showQuestion(question){ //takes question
+    questionElement.innerText = question.question //changes text to question
+    question.answers.forEach(answer => {       //creates button for each answer in question in question array
+        const button = document.createElement("button") 
+        button.innerText = answer.text  //changes button text to answer values
+        button.classList.add("btn")     
+        if (answer.correct) { //if the answer = correct, then...
+            button.dataset.correct = answer.correct 
         }
         button.addEventListener("click", selectAnswer)
-        answerButtonsElement.appendChild(button)
+        answerButtonsElement.appendChild(button) //append button to button element div
     })
 }
 
@@ -82,7 +77,7 @@ function selectAnswer(e){
     if (shuffledQuestions.length > currentQuestionIndex + 1){
         nextButton.classList.remove("hide")}
         else{
-            const scoreUp = parseInt(scoreUpElement.textContent, 0)
+            const scoreUp = parseInt(scoreUpElement.textContent, 0) //when run out of questions: 
             startButton.innerText = "Restart quiz?"
             startButton.classList.remove("hide")
             subSubHeader.classList.add("hide")
@@ -113,12 +108,12 @@ function selectAnswer(e){
 }
 
 function processResults(isCorrect){
-    if (!isCorrect){
+    if (!isCorrect){   //if the answer is not correct, do nothing
         return
     }
 
     const scoreUp = parseInt(scoreUpElement.textContent, 0)
-    scoreUpElement.textContent = scoreUp + 1 + " / " + questions.length
+    scoreUpElement.textContent = scoreUp + 1 + " / " + questions.length //change text of score as correct question answered
 }  
 
 
@@ -127,17 +122,17 @@ function setStatusClass(element, correct){
     if (correct){
         element.classList.add("correct")
     }else{
-        element.classList.add("wrong")
+        element.classList.add("wrong") //changes style based on whether answer is correct or incorrect
     }
 }
 
 function clearStatusClass(element){
     element.classList.remove("correct")
-    element.classList.remove("wrong")
+    element.classList.remove("wrong")   //clears all classes/styles
 }
 
 
-const questions = [
+const questions = [ //array of questions and answers
     {
         question: "What does CPU stand for?",
         answers: [

@@ -35,7 +35,8 @@ h1:hover{
     outline: 2px solid rgb(233, 60, 146);
     width:800px;
     max-width: 80%;
-    background-color: white ;
+    background-color: white;
+    opacity: 0.8;
     border-radius: 5px;
     padding:10px;
     box-shadow: 0 0 5px 2px hotpink;
@@ -45,6 +46,7 @@ h1:hover{
     user-select:none;
     text-align:center;
     padding:20px;
+    font-size:2em;
 }
 
 .btn-grid{
