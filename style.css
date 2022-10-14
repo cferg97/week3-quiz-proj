@@ -62,8 +62,8 @@ h1:hover{
     border: 2px solid rgb(17, 19, 105);
     outline:none;
     transition:0.5s;
-    max-width:170px;
-    min-height: 50px;
+    max-width:160px;
+    min-height: 10px;
     max-height:100px;
     white-space: normal;
     font-size:1em;
