@@ -130,3 +130,7 @@ h1:hover{
     justify-content: center;
     align-items: center;
 }
+
+#img{
+    display:flex;
+}
