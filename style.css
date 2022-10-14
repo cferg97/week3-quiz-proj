@@ -52,7 +52,7 @@ h1:hover{
     grid-template-columns: repeat(2, auto);
     justify-content: space-around;
     gap: 10px;
-    margin:10px 0;
+    margin:30px 0;
 }
 
 .btn {
@@ -86,7 +86,7 @@ h1:hover{
     justify-content: center;
     align-items: center;
 }
-
+/* 
 #progressBar{
     width:15rem;
     height:1rem;
@@ -100,7 +100,7 @@ h1:hover{
     height:100%;
     background:green;
     width:0%;
-}
+} */
 
 .hide{
     display:none;
