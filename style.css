@@ -31,7 +31,6 @@ h1:hover{
 }
 
 .container{
-    z-index:2;
     outline: 2px solid rgb(233, 60, 146);
     width:800px;
     max-width: 80%;
