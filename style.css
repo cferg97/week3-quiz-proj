@@ -108,12 +108,12 @@ h1:hover{
 
 .correct{
     background-color: rgb(155, 214, 155);
-    transition: 1s;
+    transition: 0.5s;
 }
 
 .wrong{
     background-color:rgb(201, 102, 102);
-    transition: 1s;
+    transition: 0.5s;
 }
 
 .score-grid{

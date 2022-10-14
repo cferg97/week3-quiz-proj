@@ -81,10 +81,25 @@ function selectAnswer(e){
             
             if (scoreUp >= 6){
                 scoreUpElement.innerText = "You got: "+ scoreUp + " " + " - you passed!"
-                return
+                let img = document.createElement("img")
+                img.src = "https://pbs.twimg.com/media/E9z5V8tUUAQM_V-.jpg"
+                let div = document.getElementById("pic")
+                div.appendChild(img)
+                img.style.width = "400px"
+                img.style.borderRadius = "10px"
+                img.style.margin = "20px"
             }
             if (scoreUp <= 5){
                 scoreUpElement.innerText = "You got: " +scoreUp + " " + " - try again."
+                let img = document.createElement("img")
+                img.src = "https://www.rainforest-alliance.org/wp-content/uploads/2021/06/capybara-square-1.jpg.optimal.jpg"
+                let div = document.getElementById("pic")
+                div.appendChild(img)
+                img.style.width = "400px"
+                img.style.borderRadius = "10px"
+                img.style.margin = "20px"
+                
+                
             }
         }
 }
